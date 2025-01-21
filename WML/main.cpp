@@ -7,7 +7,7 @@ int main()
     string fileName="main";
     if(checkForWml(fileName))
     {
-        cout << fileName<<" was not found\n";
+        cerr << fileName<<" was not found\n";
         return 1;
     }
     resetHtml();

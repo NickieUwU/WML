@@ -1,1 +1,1 @@
-g++ main.cpp components/components.cpp fileManager/fileManager.cpp compiler/compiler.cpp -o program
+g++ main.cpp components/components.cpp fileManager/fileManager.cpp compiler/compiler.cpp attrs/attrs.cpp -o program
