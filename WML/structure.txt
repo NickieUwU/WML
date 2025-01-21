@@ -1,0 +1,3 @@
+component>>class:someClass>>id:someID
+    content
+<<endcomponent
