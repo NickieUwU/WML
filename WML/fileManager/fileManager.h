@@ -2,5 +2,5 @@
 #ifndef FILEMANAGER_H
 #define FILEMANAGER_H
     void resetHtml();
-    void checkForWml();
+    bool checkForWml(string &fileName);
 #endif
