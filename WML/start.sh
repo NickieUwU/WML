@@ -1,0 +1,1 @@
+g++ main.cpp components/components.cpp fileManager/fileManager.cpp -o program

@@ -1,6 +1,6 @@
 #include "fileManager.h"
 
-void checkIfFileExists(ofstream &HTML_FILE)
+void resetHtml()
 {
-    
+    if(filesystem::exists("./output/output.html")) filesystem::remove("./output/output.html");
 }
