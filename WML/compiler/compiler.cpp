@@ -10,6 +10,7 @@ void compile(ifstream &WML_FILE, ofstream &HTML_FILE, string &content)
         string openingComponent = getOpeningComponent(content);
         string closingComponent = getClosingComponent(content);
         openingComponentHandler(HTML_FILE, content, openingComponent);
+        handleContent(HTML_FILE, content, openingComponent, closingComponent);
         closingComponentHandler(HTML_FILE, content, closingComponent);
     }
 }
@@ -46,7 +47,7 @@ void openingComponentHandler(ofstream &HTML_FILE, string &content, string &compo
 
 void handleContent(ofstream &HTML_FILE, string &content, string &openingComponent, string &closingComponent)
 {
-    
+   
 }
 
 void closingComponentHandler(ofstream &HTML_FILE, string &content, string &component)
