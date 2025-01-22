@@ -11,8 +11,8 @@ int main()
         return 1;
     }
     resetHtml();
-    ifstream WML_FILE("../"+fileName+".wml");
-    ofstream HTML_FILE("./output/output.html");
+    ifstream WML_FILE("./"+fileName+".wml");
+    ofstream HTML_FILE("output.html");
     compile(WML_FILE, HTML_FILE, content);
     return 0;
 }

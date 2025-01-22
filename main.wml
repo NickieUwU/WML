@@ -7,7 +7,7 @@ head>>
 body>>
     div>>class:container>>id:root>>
         h1>>
-            'Heading'
+            'Not heading'
         <<h1
         br>>
         label>>
