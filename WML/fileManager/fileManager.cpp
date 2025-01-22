@@ -10,5 +10,5 @@ void resetHtml()
 
 bool checkForWml(string &fileName)
 {
-    return !filesystem::exists("../"+fileName+".wml") ?true:false;
+    return !filesystem::exists("./"+fileName+".wml") ?true:false;
 }
