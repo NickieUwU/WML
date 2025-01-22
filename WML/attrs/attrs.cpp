@@ -19,3 +19,14 @@ string getAttr(string &content)
     }
     return "";
 }
+
+string handleAttr(string &content, string &attr)
+{
+    size_t contentStart = content.find(attr);
+    size_t contentEnd = content.find(">>", contentStart);
+    if(contentStart!=string::npos && contentEnd!=string::npos)
+    {
+        return content.substr(contentStart, contentEnd-contentStart);
+    }
+    return "";
+}

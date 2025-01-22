@@ -19,16 +19,28 @@ void openingComponentHandler(ofstream &HTML_FILE, string &content, string &compo
     if(content.find(component)!=string::npos&&!emptyComponent(component))
     {
         HTML_FILE << "<"+component.substr(0, component.size()-2);
-        string attr = getAttr(content);
-        if(!attr.empty())
+        while (true)
         {
-            HTML_FILE << " "<<attr.substr(0, attr.size()-1)<<"=\"";
-            size_t startingPos = content.find(attr);
-            size_t endingPos = content.find(">>");
-            HTML_FILE << "\"";
-        }
-        if(content.find(">>>")!=string::npos) HTML_FILE << ">";
-        cout << content;
+            string attr = getAttr(content);
+            if (attr.empty())
+                break;
+
+            string attrContent = handleAttr(content, attr);
+            if (!attrContent.empty())
+            {
+                HTML_FILE << " " << attr.substr(0, attr.size() - 1) << "=\"";
+                HTML_FILE << attrContent.substr(attr.size());
+                HTML_FILE << "\"";
+            }
+
+            size_t attrPos = content.find(attr);
+            size_t endPos = content.find(">>", attrPos);
+            if (attrPos != string::npos && endPos != string::npos)
+                content = content.substr(endPos + 2);
+            else
+                break;
+        }   
+        HTML_FILE << ">";
     }
 }
 
