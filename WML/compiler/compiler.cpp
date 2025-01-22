@@ -47,25 +47,23 @@ void openingComponentHandler(ofstream &HTML_FILE, string &content, string &compo
 
 void handleContent(ofstream &HTML_FILE, string &content, string &openingComponent, string &closingComponent)
 {
-    /*size_t contentStart = content.find(attr);
-    size_t contentEnd = content.find(">>", contentStart);
-    if(contentStart!=string::npos && contentEnd!=string::npos)
-    {
-        return content.substr(contentStart, contentEnd-contentStart);
-    }
-    return "";*/
     size_t contentStart = content.find("'");
-    // Find the next occurrence of a single quote after the first one
     size_t contentEnd = content.find("'", contentStart + 1);
 
-    // Check if both positions are valid
     if (contentStart != string::npos && contentEnd != string::npos)
     {
-        // Extract the content between the single quotes
         string extractedContent = content.substr(contentStart + 1, contentEnd - contentStart - 1);
-        // Print the extracted content to the HTML file
+        
+        size_t pos = 0;
+        while ((pos = extractedContent.find("\\n", pos)) != string::npos) {
+            extractedContent.replace(pos, 2, "<br>");
+            pos += 4;
+        }
+
+        // Print the modified content to the HTML file
         HTML_FILE << extractedContent;
     }
+
 }
 
 void closingComponentHandler(ofstream &HTML_FILE, string &content, string &component)
