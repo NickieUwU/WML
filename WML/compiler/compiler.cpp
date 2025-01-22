@@ -44,6 +44,11 @@ void openingComponentHandler(ofstream &HTML_FILE, string &content, string &compo
     }
 }
 
+void handleContent(ofstream &HTML_FILE, string &content, string &openingComponent, string &closingComponent)
+{
+    
+}
+
 void closingComponentHandler(ofstream &HTML_FILE, string &content, string &component)
 {
     if(content.find(component)!=string::npos&&!emptyComponent(component))

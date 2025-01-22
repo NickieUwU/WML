@@ -1,5 +1,7 @@
 div>>class:container>>id:root>>
-    h1>>class:Heading>>>  <<h1
+    h1>>class:Heading>>>  <<h1 
+    br>>
+    input>>type:number>>>
 <<div
 
 div>>class:outside>>> <<div
