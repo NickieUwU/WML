@@ -4,5 +4,6 @@
 
 <ul>
   <li>Run compile.sh</li>
-  <li></li>
+  <li>Put wml file to the same file as your main.wml</li>
+  <li>Run wml file by ./wml</li>
 </ul>
