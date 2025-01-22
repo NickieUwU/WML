@@ -60,7 +60,6 @@ void handleContent(ofstream &HTML_FILE, string &content, string &openingComponen
             pos += 4;
         }
 
-        // Print the modified content to the HTML file
         HTML_FILE << extractedContent;
     }
 
